@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Task;
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
+use App\Http\Requests\TaskRequest;
 
 class TaskController extends Controller
 
@@ -22,17 +23,17 @@ class TaskController extends Controller
     return view('tasks.create');
   }
 
-  public function store(Request $request)
+  public function store(TaskRequest $request)
   {
     // インスタンスの作成
-    $memo = new Task();
+    $task = new Task();
 
     // 値の用意
-    $memo->title = $request->title;
-    $memo->body = $request->body;
+    $task->title = $request->title;
+    $task->body = $request->body;
 
     // インスタンスに値を設定して保存
-    $memo->save();
+    $task->save();
 
     // 登録したらindexに戻る
     return redirect(route('tasks.index'));
@@ -43,5 +44,34 @@ class TaskController extends Controller
   {
     $task = Task::find($id);
     return view('tasks.show', ['task' => $task]);
+  }
+  public function edit($id)
+  { 
+    $task = Task::find($id);
+    return view('tasks.edit', ['task' => $task]);
+  }
+
+  public function update(TaskRequest $request, $id)
+  {
+    // ここはidで探して持ってくる以外はstoreと同じ
+    $task = Task::find($id);
+
+    // 値の用意
+    $task->title = $request->title;
+    $task->body = $request->body;
+
+    // 保存
+    $task->save();
+
+    // 登録したらindexに戻る
+    return redirect(route('tasks.index'));
+  }
+
+  public function destroy($id)
+  {
+    $task = Task::find($id);
+    $task->delete();
+
+    return redirect(route('tasks.index'));
   }
 }
