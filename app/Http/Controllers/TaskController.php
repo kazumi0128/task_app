@@ -71,9 +71,6 @@ class TaskController extends Controller
   {
     $task = Task::find($id);
     // $task->delete();
-    if ($task) {
-      $task->delete();
-    }
     return redirect(route('tasks.index'));
   }
 }

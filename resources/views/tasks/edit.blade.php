@@ -23,7 +23,7 @@
     @if ($errors->any())
 
         <div class="error">
-         <h2>[エラー内容]</h2>
+        <h2>[エラー内容]</h2>
             <p>
                 <b>{{ count($errors) }}件のエラーがあります。</b>
             </p>
@@ -42,6 +42,7 @@
             <label for="title">タイトル</label><br>
             <input type="text" name="title" id="title" value="{{ old('title', $task->title) }}">
         </p>
+        
         <p>
             <label for="body">本文</label><br>
             <textarea name="body" class="body" id="body">{{ old('body', $task->body) }}</textarea>
@@ -50,12 +51,7 @@
         <div class="button-group">
 
         <input type="submit" value="更新">
-    </form>
-
-    
-    <button onclick="location.href='{{ route('tasks.show', $task->id) }}'">詳細に戻る</button>
-</body>
-</form>
-</body>
-
-</html>
+        
+        <div>
+            <button onclick="location.href='{{ route('tasks.show', $task->id) }}'">詳細に戻る</button>
+        </diV>
