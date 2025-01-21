@@ -7,13 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>tasks edit</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
- <style>
- /* ボタン横並び */
-        .button-group {
-            display: flex;
-            gap: 10px; /* ボタン間の間隔 */
-            margin-top: 20px; /* 上部余白 */
-        }
 
 </head>
 
@@ -23,7 +16,7 @@
     @if ($errors->any())
 
         <div class="error">
-        <h2>[エラー内容]</h2>
+            <h2>[エラー内容]</h2>
             <p>
                 <b>{{ count($errors) }}件のエラーがあります。</b>
             </p>
@@ -42,16 +35,16 @@
             <label for="title">タイトル</label><br>
             <input type="text" name="title" id="title" value="{{ old('title', $task->title) }}">
         </p>
-        
         <p>
             <label for="body">本文</label><br>
             <textarea name="body" class="body" id="body">{{ old('body', $task->body) }}</textarea>
         </p>
-        
-        <div class="button-group">
 
-        <input type="submit" value="更新">
-        
-        <div>
+        <div class="button-group">
+            <input type="submit" value="更新">
             <button onclick="location.href='{{ route('tasks.show', $task->id) }}'">詳細に戻る</button>
-        </diV>
+        </div>
+    </form>
+</body>
+
+</html>

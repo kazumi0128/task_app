@@ -63,10 +63,9 @@ class TaskController extends Controller
     // 保存
     $task->save();
 
-    // 登録したらindexに戻る
-    return redirect(route('tasks.index'));
+    // 登録したら詳細に戻る
+    return redirect()->route('tasks.show', $task->id)->with('success', 'タスクを更新しました！');
   }
-
   public function destroy($id)
   {
     $task = Task::find($id);
