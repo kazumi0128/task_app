@@ -6,6 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>tasks index</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <style>
+        h1,
+        h2 {
+            font-size: 24px;
+            /* 文字サイズを統一 */
+            font-weight: bold;
+            /* 太さを統一 */
+            margin-bottom: 20px;
+            /* 下部の余白を調整 */
+        }
+
+        /* 区切り線のデザイン */
+        .divider {
+            margin: 30px 0;
+            border-top: 2px solid #ccc;
+            width: 100%;
+            max-width: 100%;
+            /* 横幅いっぱいに */
+        }
+    </style>
+
 
 </head>
 
@@ -13,7 +35,7 @@
     <h1>タスク一覧</h1>
 
     <!-- タスク一覧 -->
-    <ul>
+    <ul style="list-style-type: none; padding: 0;">
         @if ($tasks->count() > 0)
             @foreach ($tasks as $task)
                 <li>
@@ -31,6 +53,9 @@
         @else
             <p>タスクがありません。</p>
         @endif
+        <!-- 区切り線 -->
+        <div class="divider"></div>
+
     </ul>
 
     <!-- 新規タスク登録フォーム -->
@@ -45,6 +70,7 @@
             </ul>
         </div>
     @endif
+
 
     <form action="{{ route('tasks.store') }}" method="post">
         @csrf

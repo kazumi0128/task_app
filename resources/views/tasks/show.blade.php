@@ -7,7 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>tasks show</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-
+    <style>
+        {{-- /* タイトルと内容のヘッダーのスタイルを小さく */ --}}
+        .task-header {
+        font-size: 18px; /* ヘッダーを小さく */
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #555;
+        }
+        </style>
 
 </head>
 
@@ -15,12 +23,12 @@
     <h1>タスク詳細</h1>
 
     <div>
-        <h2>【タイトル】</h2>
+        <h2 class="task-header">【タイトル】</h2>
         <p>{{ $task->title }}</p>
     </div>
 
     <div>
-        <h2>【内容】</h2>
+        <h2 class="task-header">【内容】</h2>
         <p>{!! nl2br(e($task->body)) !!}</p>
     </div>
 
