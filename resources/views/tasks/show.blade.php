@@ -12,21 +12,32 @@
 </head>
 
 <body>
-    <a href="{{ route('tasks.index') }}">戻る</a>
-    <h1>{{ $task->title }}</h1>
-    <p>{!! nl2br(e($task->body)) !!}</p>
+    <h1>タスク詳細</h1>
 
-    <div class='button-group'>
-        <button onclick='location.href="{{ route('tasks.edit', $task) }}"'>編集する</button>
-
-        <form action="{{ route('tasks.destroy', $task) }}" method="post">
-            @csrf
-            @method('DELETE')
-            <input type="submit" value="削除する" onclick="if(!confirm('削除しますか？')){return false};">
-        </form>
-
+    <div>
+        <h2>【タイトル】</h2>
+        <p>{{ $task->title }}</p>
     </div>
 
+    <div>
+        <h2>【内容】</h2>
+        <p>{!! nl2br(e($task->body)) !!}</p>
+    </div>
+
+    <div class="button-group">
+        <!-- 一覧に戻るボタン -->
+        <button onclick="location.href='{{ route('tasks.index') }}'">一覧に戻る</button>
+
+        <!-- 編集するボタン -->
+        <button onclick="location.href='{{ route('tasks.edit', $task->id) }}'">編集する</button>
+
+        <!-- 削除するボタン -->
+        <form action="{{ route('tasks.destroy', $task->id) }}" method="post" style="display: inline;">
+            @csrf
+            @method('DELETE')
+            <button type="submit" onclick="return confirm('削除しますか？')">削除する</button>
+        </form>
+    </div>
 
 </body>
 

@@ -46,7 +46,7 @@ class TaskController extends Controller
     return view('tasks.show', ['task' => $task]);
   }
   public function edit($id)
-  { 
+  {
     $task = Task::find($id);
     return view('tasks.edit', ['task' => $task]);
   }
@@ -70,8 +70,10 @@ class TaskController extends Controller
   public function destroy($id)
   {
     $task = Task::find($id);
-    $task->delete();
-
+    // $task->delete();
+    if ($task) {
+      $task->delete();
+    }
     return redirect(route('tasks.index'));
   }
 }

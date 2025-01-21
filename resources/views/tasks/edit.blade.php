@@ -10,7 +10,6 @@
 </head>
 
 <body>
-    <a href="{{ route('tasks.index') }}">戻る</a>
     <h1>タスク編集</h1>
 
     @if ($errors->any())
@@ -40,6 +39,11 @@
 
         <input type="submit" value="更新">
     </form>
+
+    <!-- 詳細に戻るボタン -->
+    <button onclick="location.href='{{ route('tasks.show', $task->id) }}'">詳細に戻る</button>
+</body>
+</form>
 </body>
 
 </html>
