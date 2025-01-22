@@ -7,27 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>tasks index</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <style>
-        h1,
-        h2 {
-            font-size: 24px;
-            /* 文字サイズを統一 */
-            font-weight: bold;
-            /* 太さを統一 */
-            margin-bottom: 20px;
-            /* 下部の余白を調整 */
-        }
-
-        /* 区切り線のデザイン */
-        .divider {
-            margin: 30px 0;
-            border-top: 2px solid #ccc;
-            width: 100%;
-            max-width: 100%;
-            /* 横幅いっぱいに */
-        }
-    </style>
-
 
 </head>
 

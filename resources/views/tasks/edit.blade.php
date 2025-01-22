@@ -45,6 +45,8 @@
             <button onclick="location.href='{{ route('tasks.show', $task->id) }}'">詳細に戻る</button>
         </div>
     </form>
+
+
 </body>
 
 </html>

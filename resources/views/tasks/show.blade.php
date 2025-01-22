@@ -7,15 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>tasks show</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <style>
-        {{-- /* タイトルと内容のヘッダーのスタイルを小さく */ --}}
-        .task-header {
-        font-size: 18px; /* ヘッダーを小さく */
-        font-weight: bold;
-        margin-bottom: 10px;
-        color: #555;
-        }
-        </style>
 
 </head>
 
