@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+.body {
+    width: 300px;
+    height: 100px;
+}
+
+.button-group {
+    display: flex;
+}
+
+.button-group>*:not(:last-child) {
+    margin-right: 10px;
+
+}
+
+.error {
+    color: red;
+}
+
+h1,
+h2 {
+    font-size: 24px;
+    /* 文字サイズを統一 */
+    font-weight: bold;
+    /* 太さを統一 */
+    margin-bottom: 20px;
+    /* 下部の余白を調整 */
+}
+
+/* 区切り線のデザイン */
+.divider {
+    margin: 30px 0;
+    border-top: 2px solid #ccc;
+    width: 100%;
+    max-width: 100%;
+    /* 横幅いっぱいに */
+}
+
+.task-header {
+    font-size: 18px;
+    /* ヘッダーを小さく */
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #555;
+}
